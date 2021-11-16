@@ -125,7 +125,7 @@ int main(int argc, char *argv[])
 	fseek(fpPcm, 0, SEEK_SET);
 	
 	fpWav = fopen(wavFileName, "wb+");
-	if(fpPcm == NULL)
+	if(fpWav == NULL)
 	{
 		char errMsg[128] = {0};
 		snprintf(errMsg, 128, "open file(%s) error", wavFileName);
