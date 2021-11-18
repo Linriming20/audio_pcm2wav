@@ -16,9 +16,8 @@ $ ./pcm2wav -h
 $ ./pcm2wav --help
 $ 
 $ # 转化
-$ cp ./audio/test.pcm .
-$ ./pcm2wav -f ./test.pcm -r 8000 -b 16 -c 1
-$ ./pcm2wav --input_pcmfile=./test.pcm --sample_rate=8000 --sample_bits=16 --channels=1  
+$ ./pcm2wav -i ./audio/test_8000_16_1.pcm -r 8000 -b 16 -c 1 -o ./test_8000_16_1.wav
+$ ./pcm2wav --input_pcmfile=./audio/test_8000_16_1.pcm --sample_rate=8000 --sample_bits=16 --channels=1 --output_wavfile=./test_8000_16_1.wav
 ```
 
 ### 3. 参考文章
@@ -33,8 +32,8 @@ $ ./pcm2wav --input_pcmfile=./test.pcm --sample_rate=8000 --sample_bits=16 --cha
 .
 ├── audio
 │   ├── pcm params.png
-│   ├── test.amr
-│   └── test.pcm
+│   ├── test_8000_16_1.pcm
+│   └── test_8000_16_1.wav
 ├── docs
 │   ├── PCM音频数据 - 简书.mhtml
 │   ├── WAV文件格式分析.pdf

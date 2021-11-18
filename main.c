@@ -14,11 +14,11 @@
 
 void print_usage(const char *process)
 {
-	printf("sample: \n"
+	printf("examples: \n"
 		   "\t %s -h\n"
 		   "\t %s --help\n"
-		   "\t %s -f ./test.pcm -r 8000 -b 16 -c 1\n"
-		   "\t %s --input_pcmfile=./audio/test.pcm --sample_rate=8000 --sample_bits=16 --channels=1\n",
+		   "\t %s -i ./audio/test_8000_16_1.pcm -r 8000 -b 16 -c 1 -o ./test_8000_16_1.wav\n"
+		   "\t %s --input_pcmfile=./audio/test_8000_16_1.pcm --sample_rate=8000 --sample_bits=16 --channels=1 --output_wavfile=./test_8000_16_1.wav\n",
 		   process, process, process, process);
 }
 
@@ -56,14 +56,15 @@ int main(int argc, char *argv[])
 	/* 解析命令行参数  -- 开始 */
 	char option = 0;
 	int option_index = 0;
-	char *short_options = "hf:r:b:c:";
+	char *short_options = "hi:r:b:c:o:";
 	struct option long_options[] =
     {
         {"help",          no_argument,       NULL, 'h'},
-        {"input_pcmfile", required_argument, NULL, 'f'},
+        {"input_pcmfile", required_argument, NULL, 'i'},
         {"sample_rate",   required_argument, NULL, 'r'},
         {"sample_bits",   required_argument, NULL, 'b'},
         {"channels",      required_argument, NULL, 'c'},
+        {"output_wavfile",required_argument, NULL, 'o'},
         {NULL,            0,                 NULL,  0 },
     };
 	while((option = getopt_long_only(argc, argv, short_options, long_options, &option_index)) != -1)
@@ -73,16 +74,11 @@ int main(int argc, char *argv[])
 			case 'h':
 				print_usage(argv[0]);
 				return 0;
-			case 'f':
+			case 'i':
 				strncpy(pcmFileName, optarg, 128);
+				break;
+			case 'o':
 				strncpy(wavFileName, optarg, 128);
-				char *p = strrchr(wavFileName, '.');
-				if(p == NULL)
-				{
-					printf("the input file name should be 'xxx.pcm'");
-					return -1;
-				}
-				strncpy(p, ".wav", 4);
 				break;
 			case 'r':
 				SampleRate = atoi(optarg);
