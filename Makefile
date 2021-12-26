@@ -12,6 +12,6 @@ pcm2wav : main.c wav_format.h
 	$(CC) $^ $(CFLAG) -o $@
 
 clean : 
-	rm -rf $(OUTPUT)
+	rm -rf $(OUTPUT) out*
 .PHONY := clean
 

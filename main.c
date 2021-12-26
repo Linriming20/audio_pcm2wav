@@ -17,8 +17,8 @@ void print_usage(const char *process)
 	printf("examples: \n"
 		   "\t %s -h\n"
 		   "\t %s --help\n"
-		   "\t %s -i ./audio/test_8000_16_1.pcm -r 8000 -b 16 -c 1 -o ./test_8000_16_1.wav\n"
-		   "\t %s --input_pcmfile=./audio/test_8000_16_1.pcm --sample_rate=8000 --sample_bits=16 --channels=1 --output_wavfile=./test_8000_16_1.wav\n",
+		   "\t %s -i ./audio/test_8000_16_1.pcm -r 8000 -b 16 -c 1 -o ./out_8000_16_1.wav\n"
+		   "\t %s --input_pcmfile=./audio/test_44100_16_2.pcm --sample_rate=44100 --sample_bits=16 --channels=2 --output_wavfile=./out_44100_16_2.wav\n",
 		   process, process, process, process);
 }
 

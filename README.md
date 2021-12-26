@@ -16,24 +16,26 @@ $ ./pcm2wav -h
 $ ./pcm2wav --help
 $ 
 $ # 转化
-$ ./pcm2wav -i ./audio/test_8000_16_1.pcm -r 8000 -b 16 -c 1 -o ./test_8000_16_1.wav
-$ ./pcm2wav --input_pcmfile=./audio/test_8000_16_1.pcm --sample_rate=8000 --sample_bits=16 --channels=1 --output_wavfile=./test_8000_16_1.wav
+$ ./pcm2wav -i ./audio/test_8000_16_1.pcm -r 8000 -b 16 -c 1 -o ./out_8000_16_1.wav
+$ ./pcm2wav --input_pcmfile=./audio/test_44100_16_2.pcm --sample_rate=44100 --sample_bits=16 --channels=2 --output_wavfile=./out_44100_16_2.wav
 ```
 
 ### 3. 参考文章
 
- - https://www.jianshu.com/p/fd43c1c82945
+ - [PCM音频数据 - 简书](https://www.jianshu.com/p/fd43c1c82945)
 
- - https://www.cnblogs.com/ranson7zop/p/7657874.html
+ - [wav文件格式分析与详解 - nigaopeng - 博客园](https://www.cnblogs.com/ranson7zop/p/7657874.html)
 
 ### 附录
 
-```
+```bash
+$ tree
 .
 ├── audio
-│   ├── pcm params.png
-│   ├── test_8000_16_1.pcm
-│   └── test_8000_16_1.wav
+│   ├── out_44100_16_2.wav
+│   ├── out_8000_16_1.wav
+│   ├── test_44100_16_2.pcm
+│   └── test_8000_16_1.pcm
 ├── docs
 │   ├── PCM音频数据 - 简书.mhtml
 │   ├── WAV文件格式分析.pdf
